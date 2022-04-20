@@ -1,0 +1,49 @@
+//// .hero-breadcrumbs
+.hero-breadcrumb {
+  font-family: $second-font;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+//// .hero-breadcrumbs__title
+.hero-breadcrumb__title {
+  margin: 0;
+  line-height: 1.333;
+
+  @include adaptive-value(font-size, 36, 24, max);
+
+  &:not(:last-child) {
+    @include adaptive-value(margin-bottom, 22, 12, max);
+  }
+}
+
+//// .hero-breadcrumbs__breadcrumbs
+.hero-breadcrumb__breadcrumb {
+  margin: 0;
+}
+
+.hero-breadcrumb__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-breadcrumb__item {
+  & > * {
+    line-height: 1.1;
+    color: inherit;
+
+    @include adaptive-value(font-size, 14, 10, max);
+  }
+
+  & + &::before {
+    content: "/";
+    display: inline;
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,23 @@
+// базовые стили блоков, которые могут изменяться через CMS и содержат медиа
+.embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+
+  img,
+  iframe,
+  video,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

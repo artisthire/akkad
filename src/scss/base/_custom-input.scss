@@ -1,0 +1,80 @@
+/* stylelint-disable function-parentheses-space-inside */
+// базовые стили для полей ввода форм
+// в том числе с "анимированны placeholder"
+.custom-input {
+  // var
+  --padding-h: 1.5rem;
+  --padding-v: 1.5rem;
+  --brd-width: 1px;
+  --brd-color: rgba(0, 0, 0, 0.1);
+  // meta.inspect - сохраняет кавычки в названии шрифтов
+  --font-family: #{meta.inspect($second-font)};
+  --font-size: 1.2rem;
+  --font-weight: 700;
+  --font-color: #cccccc;
+  --line-height: 1.1;
+  --bgn-color: #fefcf9;
+  --transition-dur: 0.2s;
+  // для дополнительных отступов вокруг текста, чтобы лучше было видно наличие background-color
+  --placeholder-padding-h: 3px;
+  --placeholder-color: #{$light-green};
+  --placeholder-scale: 0.9;
+  // сдвиг метки влево вверх
+  --placeholder-transfrom-x: -10%;
+  // 1 / $placeholder-scale  - учитывает уменьшение размера при трансформации
+  // 0.5 * $font-size * $line-height - сдвиг на половину величины линии line-height
+  --placeholder-transfrom-y: calc(
+    -1 / var(--placeholder-scale) * var(--padding-v) - 0.5 * var(--font-size) * var(--line-height)
+  );
+  // /var
+  position: relative;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--font-color);
+  text-transform: uppercase;
+}
+
+.custom-input__placeholder {
+  position: absolute;
+  // сдвиг на величину паддинга плюс половина значения запаса высоты над буквами
+  top: calc(var(--padding-v) + (var(--font-size) * var(--line-height) - var(--font-size)));
+  left: calc(var(--padding-h) - var(--placeholder-padding-h));
+  display: block;
+  // дополнительное пространство вокруг текста для видимости bgn-color при "наезде" label на border input-а
+  padding: 0 var(--placeholder-padding-h);
+  background-color: var(--bgn-color);
+  transition-property: color, transform;
+  transition-duration: var(--transition-dur);
+  transition-timing-function: ease-in-out;
+  pointer-events: none;
+}
+
+.custom-input__input {
+  display: block;
+  width: 100%;
+  padding: var(--padding-v) var(--padding-h);
+  border: var(--brd-width) solid var(--brd-color);
+  background-color: var(--bgn-color);
+
+  &:focus,
+  &:focus-visible {
+    border: var(--brd-width) solid var(--brd-color);
+    outline: none;
+    box-shadow: none;
+  }
+
+  // :placeholder-shown - стили не исчезнут, если в поле введен какой-либо текст
+  &:focus ~ .custom-input__placeholder,
+  &:not(:placeholder-shown) ~ .custom-input__placeholder {
+    color: var(--placeholder-color);
+    transform: scale(var(--placeholder-scale)) translateY(var(--placeholder-transfrom-y))
+      translateX(var(--placeholder-transfrom-x));
+  }
+
+  &::placeholder {
+    // placeholder заменяет анимированный .custom-input__placeholder
+    color: $transparent;
+  }
+}

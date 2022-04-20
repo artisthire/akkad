@@ -1,0 +1,38 @@
+//// .post-search__input-wrap
+.post-search__input-wrap {
+  display: flex;
+  margin: 0;
+  background-color: #ececec;
+}
+
+//// .post-search__input
+.post-search__input {
+  width: 100%;
+  font-family: $second-font;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.5rem;
+  border: 0;
+  background-color: $transparent;
+
+  &::placeholder {
+    text-transform: uppercase;
+    color: $light-grey;
+  }
+}
+
+//// .post-search__submit
+.post-search__submit {
+  flex-shrink: 0;
+  padding: 0 1em;
+  border: 0;
+  font-size: 1.8rem;
+  background-color: #ececec;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: color.scale(#ececec, $lightness: -20%);
+    }
+  }
+}

@@ -1,0 +1,106 @@
+//// .pricing__plans
+.pricing__plans {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $screen-md) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(31rem, 1fr));
+    gap: 5rem 3rem;
+  }
+}
+
+//// .pricing__plans-item
+.pricing__plans-item {
+  position: relative;
+  display: block;
+  max-width: 45rem;
+  margin: 0 auto 5rem;
+  padding: 3rem 3.2rem;
+  background-color: $white;
+
+  @media (any-hover: hover) {
+    transition-property: box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+
+    &:hover {
+      box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.01);
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    margin: 0;
+    max-width: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    background-color: $light-green;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0.7rem solid $light-green;
+    border-left-color: $transparent;
+    border-bottom-color: $transparent;
+  }
+}
+
+//// .pricing__plans-title
+.pricing__plans-title {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  font-family: $second-font;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+//// .pricing__plans-price
+.pricing__plans-price {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem 2rem;
+  font-family: $second-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
+  background-color: $light-green;
+
+  &:not(:last-child) {
+    margin-bottom: 4.5rem;
+  }
+}
+
+//// .pricing__plans-advantages
+.pricing__plans-advantages {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  list-style: none;
+
+  &:not(:last-child) {
+    margin-bottom: 4.5rem;
+  }
+
+  & > li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+}

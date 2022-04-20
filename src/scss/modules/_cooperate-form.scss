@@ -1,0 +1,24 @@
+.cooperate-form {
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cooperate-form__title {
+  margin: 0 0 15px;
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: $white;
+
+  @media (min-width: $screen-md) {
+    font-size: 3rem;
+  }
+}
+
+.cooperate-form__link {
+  padding: 1px 35px;
+  margin: 0 0;
+  margin-bottom: 15px;
+}

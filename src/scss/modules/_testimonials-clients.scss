@@ -1,0 +1,41 @@
+//// .testimonials-clients
+.testimonials-clients {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+  gap: 3rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+//// .testimonials-clients__item
+.testimonials-clients__item {
+  // flex: 0 1 16.5rem;
+  aspect-ratio: 18 / 11;
+}
+
+//// .testimonials-clients__link
+.testimonials-clients__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: color.scale($lighten-grey, $lightness: 70%);
+    }
+  }
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,5 @@
+// Подключение шрифтов
+
+@include font-face("Montserrat", "../../assets/fonts/montserrat-v18-latin-regular", 400);
+@include font-face("Montserrat", "../../assets/fonts/montserrat-v18-latin-700", 700);
+@include font-face("Open Sans", "../../assets/fonts/open-sans-v26-latin-regular", 400);

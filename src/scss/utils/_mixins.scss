@@ -1,0 +1,80 @@
+// Файл с миксинами
+
+// адаптивное свойство, значение которого меняется автоматически при изменении ширины экрана
+@mixin adaptive-value($property, $start-size, $min-size, $media-type: "") {
+  $add-size: $start-size - $min-size;
+  // для экранов меньше максимального размера контейнера $screen-xxl
+  @if ($media-type == "max") {
+    #{$property}: $start-size + px;
+
+    @media (max-width: #{$screen-xxl}) {
+      #{$property}: calc(
+        #{$min-size + px} + #{$add-size} * ((100vw - 320px) / #{strip-unit($screen-xxl) - 320})
+      );
+    }
+  }
+  // для экранов больше максимального размера контейнера $screen-xxl
+  // размер будет меняться при величине экрана $screen-xxl от до $screen-max-width
+  // где $screen-max-width - величина полотна, большего чем ограничивающий контейнер
+  @else if ($media-type == "min") {
+    #{$property}: $start-size + px;
+    /* prettier-ignore */
+    @media (min-width: #{$screen-xxl}) {
+      #{$property}: calc(
+        #{$min-size + px} + #{$add-size} * ((100vw - 320px) / #{strip-unit($screen-max-width) - 320})
+      );
+    }
+  }
+  // для любых экранов
+  // $screen-max-width - величина полотна, не ограничивающего контейнера
+  @else {
+    #{$property}: calc(
+      #{$min-size + px} + #{$add-size} * ((100vw - 320px) / #{strip-unit($screen-max-width) - 320})
+    );
+  }
+}
+
+// Миксина подключения шрифтов
+// Требует и использует только файлы в формате: .woff, .woff2
+//  @include font-face("OpenSans", "../fonts/OpenSans/opensansItalic", 400, italic);
+@mixin font-face($font-family, $file-path, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: optional;
+
+    src: local($font-family), url("#{$file-path}.woff2") format("woff2");
+  }
+}
+
+// Медиавыражение для применения стилей на ретина экранах
+@mixin retina {
+  @media only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// Преобразование px в rem
+@function rem($pixels, $context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}

@@ -1,0 +1,86 @@
+.testimonials-slider {
+  // лечит неправильное расширение слайдера при грид или флекс разметке
+  min-width: 0;
+  max-width: 60rem;
+  margin: 0 auto 5rem;
+
+  @media (min-width: $screen-xl) {
+    margin: 0;
+  }
+
+  // донастройка стилей слайдера
+  .splide__pagination {
+    margin: 0;
+    padding: 0;
+  }
+
+  .splide__pagination__page {
+    width: 1.6rem;
+    height: 1.5rem;
+    margin: 0 0.2rem;
+    padding: 0.5rem 0;
+    border: none;
+    background-clip: content-box;
+    background-color: $light-grey;
+    box-shadow: none;
+    cursor: pointer;
+    transition: width 0.3s linear;
+
+    &.is-active {
+      background-color: $light-green;
+      width: 3.1rem;
+    }
+  }
+}
+
+.testimonials-slider__track {
+  margin-bottom: 3rem;
+}
+
+.testimonials-slider__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+//// .testimonials-slider__item
+.testimonials-slider__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  & > * {
+    margin: 0;
+  }
+
+  & > *:not(:last-child) {
+    margin: 0 0 2rem 0;
+  }
+}
+
+//// .testimonials-slider__slide-photo
+.testimonials-slider__slide-photo {
+  flex: 0 0 8.2rem;
+  width: 8.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+//// .testimonials-slider__slide-comment
+.testimonials-slider__slide-comment {
+  font-size: 1.4rem;
+  line-height: 2.14;
+}
+
+//// .testimonials-slider__slide-name
+.testimonials-slider__slide-name {
+  display: block;
+  padding: 0.9rem 1.1rem;
+  font-family: $second-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $light-green;
+}

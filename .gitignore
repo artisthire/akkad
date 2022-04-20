@@ -1,0 +1,14 @@
+bower_components/
+node_modules/
+.vscode/
+.DS_Store
+*.log
+*.rar
+*.zip
+.idea
+.publish
+ex_files
+Thumbs.db
+dist/
+PSD/
+package-lock.json

@@ -1,0 +1,26 @@
+.contact-footer {
+  padding: 4rem 0;
+  background-color: $light-green;
+}
+
+.contact-footer__grid {
+  @media (min-width: $screen-lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.contact-footer__cooperate {
+  margin-bottom: 5rem;
+
+  @media (min-width: $screen-lg) {
+    flex: 0 1 510px;
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+}
+
+.contact-footer__subscribe {
+  flex: 0 1 555px;
+}

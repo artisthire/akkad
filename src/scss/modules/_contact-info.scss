@@ -1,0 +1,41 @@
+//// .contact-info
+.contact-info {
+  font-size: 1.4rem;
+  line-height: 2.14;
+  color: $lighten-grey;
+
+  & > *:not(:last-child) {
+    margin: 0 0 25px 0;
+  }
+}
+
+//// .contact-info__title
+.contact-info__title {
+  font-family: $second-font;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: $light-grey;
+}
+
+//// .contact-info__address
+.contact-info__address {
+  @media (min-width: $screen-lg) {
+    max-width: 290px;
+  }
+
+  & > * {
+    display: block;
+    text-transform: none;
+  }
+}
+
+.contact-info__post {
+  margin: 0;
+}
+
+//// .contact-info__social
+.contact-info__social {
+  justify-content: flex-start;
+  color: inherit;
+}

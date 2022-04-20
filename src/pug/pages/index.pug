@@ -1,0 +1,138 @@
+extends ../layout/default.pug
+
+block variables
+  //- используесят для установки активных ссылках в меню header и footer
+  //- должно соответствовать названию файла текущей страницы без расширения
+  - var currentPage = "index";
+
+block title
+  title Home
+
+//- блок для вставки отдельных предзагружаемых ресурсов link(rel="preload"), кроме шрифтов
+block preload
+
+block content
+  main
+    .container
+      section.history
+        .history__content
+          h2.section-caption__title.history__title HISTORY OF AGENCY
+          p.history__text.
+            Porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+            adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+            aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+            suscipit laboriosam, nisi ut aliquid ex ea commodi modi tempora incidunt ut labore.
+          a.button.history__link(href="#") Read more
+
+        .history__img-wrap.ibg
+          +webpImg("index/history-img-1.jpg", alt="Our workplace", width="470", height="500")
+
+      section.favor
+        .section-caption
+          h2.section-caption__title why choose us
+          p.section-caption__desc.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+
+        .favor__row
+          ol#favor-list.favor__list(data-aos="fade-up")
+            li.favor__item
+              ion-icon(name="infinite-outline", aria-hidden="true")
+              h3.favor__item-title unlimited options
+              ul.favor__sublist
+                li.favor__subitem Branding
+                li.favor__subitem Design & Copywriting
+                li.favor__subitem Concept development
+                li.favor__subitem User Experience
+            li.favor__item
+              ion-icon(name="shuffle-outline", aria-hidden="true")
+              h3.favor__item-title DESIGN & DEVELOPMENT
+              ul.favor__sublist
+                li.favor__subitem Information architecture
+                li.favor__subitem Interface design
+                li.favor__subitem Product Design
+                li.favor__subitem Integrated ad Companies
+            li.favor__item
+              ion-icon(name="cart-outline", aria-hidden="true")
+              h3.favor__item-title e-commerce
+              ul.favor__sublist
+                li.favor__subitem Prototyping
+                li.favor__subitem Technical Consulting
+                li.favor__subitem Web applications
+                li.favor__subitem Quality testing
+            li.favor__item
+              ion-icon(name="options-outline", aria-hidden="true")
+              h3.favor__item-title CUSTOMIZABLE DESIGN
+              ul.favor__sublist
+                li.favor__subitem Information architecture
+                li.favor__subitem Interface design
+                li.favor__subitem Product Design
+                li.favor__subitem Integrated ad Companies
+          .favor__img-wrap.ibg(
+            data-aos="fade-up",
+            data-aos-delay="200",
+            data-aos-anchor="#favor-list"
+          )
+            +webpImg("index/favor-img-1.jpg", alt="Our workplace", width="470", height="500")
+      section.portfolio
+        .section-caption
+          h2.section-caption__title our portfolio
+          p.section-caption__desc.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        .portfolio__grid
+          .portfolio__category.portfolio-category(data-aos="fade-right")
+            .portfolio-category__title choose category
+            ul.portfolio-category__list(id="portfolio-category-ctrls")
+              li.portfolio-category__item
+                a.portfolio-category__link.active.js-category-filter-btn(
+                  href="#",
+                  data-group="all"
+                ) all
+              li.portfolio-category__item
+                a.portfolio-category__link.js-category-filter-btn(href="#", data-group="webdesign") webdesign
+              li.portfolio-category__item
+                a.portfolio-category__link.js-category-filter-btn(href="#", data-group="graphic") graphic design
+              li.portfolio-category__item
+                a.portfolio-category__link.js-category-filter-btn(href="#", data-group="fashion") fashion
+              li.portfolio-category__item
+                a.portfolio-category__link.js-category-filter-btn(href="#", data-group="logo") logo design
+              li.portfolio-category__item
+                a.portfolio-category__link.js-category-filter-btn(
+                  href="#",
+                  data-group="advertising"
+                ) advertising
+          .portfolio__examples(id="portfolio-examples")
+            a.portfolio__examples-item.js-portfolio-example(href="#", data-groups="webdesign")
+              +webpImg("portfolio/portfolio-example-1.jpg", alt="Portfolio example", width="262", height="173")
+
+            a.portfolio__examples-item.js-portfolio-example(href="#", data-groups="logo")
+              +webpImg("portfolio/portfolio-example-2.jpg", alt="Portfolio example", width="263", height="175")
+
+            a.portfolio__examples-item.js-portfolio-example(
+              href="#",
+              data-groups="webdesign, graphic"
+            )
+              +webpImg("portfolio/portfolio-example-3.jpg", alt="Portfolio example", width="260", height="390")
+
+            a.portfolio__examples-item.js-portfolio-example(href="#", data-groups="logo, graphic")
+              +webpImg("portfolio/portfolio-example-4.jpg", alt="Portfolio example", width="264", height="266")
+
+            a.portfolio__examples-item.js-portfolio-example(href="#", data-groups="fashion")
+              +webpImg("portfolio/portfolio-example-5.jpg", alt="Portfolio example", width="264", height="396")
+
+            a.portfolio__examples-item.js-portfolio-example(
+              href="#",
+              data-groups="fashion, webdesign"
+            )
+              +webpImg("portfolio/portfolio-example-6.jpg", alt="Portfolio example", width="261", height="149")
+
+            a.portfolio__examples-item.js-portfolio-example(href="#", data-groups="advertising")
+              +webpImg("portfolio/portfolio-example-7.jpg", alt="Portfolio example", width="263", height="396")
+
+            a.portfolio__examples-item.js-portfolio-example(
+              href="#",
+              data-groups="fashion, advertising"
+            )
+              +webpImg("portfolio/portfolio-example-8.jpg", alt="Portfolio example", width="263", height="263")

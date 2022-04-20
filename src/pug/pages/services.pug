@@ -1,0 +1,79 @@
+extends ../layout/default.pug
+
+block variables
+  //- используесят для установки активных ссылках в меню header и footer
+  //- должно соответствовать названию файла текущей страницы без расширения
+  - var currentPage = "services";
+  //- используется в inner-pagination
+  - var paginationTitle = "Services";
+
+block title
+  title= `${paginationTitle}`
+
+//- блок для вставки отдельных предзагружаемых ресурсов link(rel="preload"), кроме шрифтов
+block preload
+
+block content
+  main
+    .container
+      .page
+        section.what-do
+          .section-caption
+            h2.section-caption__title What we do
+            p.section-caption__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+          .what-do__row
+            .what-do__text
+              p.what-do__desc.
+                Erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan.
+              ul.what-do__list
+                -
+                  var items = ["Stunning on all screens", "Easy to customize", "Make a difference",
+                    "Imagine and create", "Unlimited possibilities", "Remarkable style", "Captivating presentations",
+                    "Make your portfolio pop", "Words that matter", "Satisfied clients"]
+                each item in items
+                  li.list-checkbox.what-do__item= `${item}`
+
+            .ibg.what-do__media
+              +webpImg(`services/work-1.jpg`, alt=`Workplace`, width='554', height='364')
+
+          ul.what-do__advantages
+            -
+              var itemsData = [
+                {title: "KEEP PULSE GOING", icon: "pulse-outline"},
+                {title: "PASS THE LIMITS", icon: "infinite-outline"},
+                {title: "GREAT IDEAS", icon: "bulb-outline"},
+                {title: "AWESOME SUPPORT", icon: "options-outline"},
+              ]
+            each item in itemsData
+              li.what-do__advantages-item
+                ion-icon.what-do__advantages-icon(name=`${item.icon}`, aria-hidden="true")
+                h3.what-do__advantages-title= `${item.title}`
+                p.what-do__advantages-text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+
+        section.pricing
+          .section-caption
+            h2.section-caption__title pricing plans
+            p.section-caption__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+          ul.pricing__plans
+            -
+              var itemsData = [
+                {title: "basic", price: "$35.99"},
+                {title: "ADVANCED", price: "$55.99"},
+                {title: "smart", price: "$75.99"},
+              ]
+            each item in itemsData
+              li.pricing__plans-item
+                h3.pricing__plans-title= `${item.title}`
+                p.pricing__plans-price= `${item.price} Monthly`
+                ol.pricing__plans-advantages
+                  li.list-checkbox Lorem ipsum dolor sit amet
+                  li.list-checkbox Consectetuer adipiscing elit
+                  li.list-checkbox Sed diam nonummy
+                  li.list-checkbox Nibh euismod tincidunt
+                  li.list-checkbox Ut laoreet dolore
+                  li.list-checkbox Magna aliquam erat volutpat
+                a.button.pricing__plans-link(href="#") get started

@@ -1,0 +1,37 @@
+.social-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  color: $lighten-grey;
+  list-style: none;
+
+  @media (min-width: $screen-md) {
+    justify-content: flex-end;
+  }
+}
+
+.social-menu__item {
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social-menu__link {
+  display: inline-block;
+  padding: 5px;
+  color: inherit;
+  transition: transform 0.2s linear, color 0.1s ease-in;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $light-green;
+    transform: scale(1.2);
+  }
+}

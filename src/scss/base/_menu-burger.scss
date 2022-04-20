@@ -1,0 +1,59 @@
+// стили для кнопки-бургера отрытия мобильного меню
+.menu-burger {
+  position: relative;
+  width: 35px;
+  height: 25px;
+  padding: 0;
+  border: 0;
+  background-color: $transparent;
+  cursor: pointer;
+  overflow: hidden;
+
+  & > span,
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background-color: $lighten-grey;
+    transition: all 0.3s ease;
+  }
+
+  & > span {
+    top: 50%;
+    margin-top: -1.5px;
+  }
+
+  &::before {
+    content: "";
+    top: 0;
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    bottom: 0;
+    width: 70%;
+  }
+
+  // добавляется при открытии мобильного меню
+  // меняет вид бургера
+  &.open {
+    &::before {
+      width: 130%;
+      transform-origin: 2px 0;
+      transform: rotate(35deg);
+    }
+
+    & > span {
+      transform: translateX(-105%);
+    }
+
+    &::after {
+      width: 115%;
+      transform-origin: 2px;
+      transform: rotate(-35deg);
+    }
+  }
+}

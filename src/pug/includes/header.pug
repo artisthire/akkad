@@ -1,0 +1,124 @@
+if (currentPage === 'index')
+  - var headerClass = "header";
+else
+  //- отдельная стилизация для внутренних страниц
+  - var headerClass = "header header--inner";
+
+//- проверка поддержки формата Webp
+//- добавляет маленькое изображение в формате Webp, которое после загрузки добавляет класс 'webp' или 'no-webp' к тегу html
++supportWebp
+
+header(class=`${headerClass}`)
+  //- position: absolute - за этим блоком наблюдает Intersection Observer
+  .header__menu-wrap(data-observer, data-observer-target="header-menu")
+    //- position: fixed - это фиксированное меню, к которому добавляются стили из Intersection Observer
+    #header-menu.header__menu.header-menu
+      .container
+        .header-menu__grid
+          if (currentPage === "index")
+            span.header-menu__logo Akad.
+          else
+            a.header-menu__logo(href="index.html", data-load-anim) Akad.
+
+          button.header-menu__burger.menu-burger(
+            type="button",
+            aria-expanded="false",
+            aria-label="Toggle navigation",
+            aria-controls="navbarSupportedContent",
+            data-burger,
+            data-burger-target="navbarSupportedContent"
+          )
+            span
+
+          nav.header-menu__menu.main-menu(id="navbarSupportedContent", aria-label="Main menu")
+            ul.main-menu__list(role="menubar", aria-label="Main menu", data-burger-navmenu)
+              -
+                var linkData = [
+                  {href: "index", text: "Home"},
+                  {href: "services", text: "Services"},
+                  {href: "about", text: "About us"},
+                  {href: "contact", text: "Contact us"},
+                  {href: "blog", text: "Blog"}
+                ]
+              each link in linkData
+                case link.href
+                  when 'services'
+                    li(role="none")
+                      a.accordion__ctrl.main-menu__sublist-ctrl(
+                        href="#",
+                        role="menuitem",
+                        aria-haspopup="true",
+                        aria-expanded="false",
+                        aria-controls=`${link.href}-submenu`,
+                        data-accordion-ctrl,
+                        data-accordion-target=`${link.href}-submenu`
+                      )= `${link.text}`
+                      ul.accordion__content.main-menu__sublist(
+                        id=`${link.href}-submenu`,
+                        role="menu",
+                        aria-label=`${link.text}`
+                      )
+                        li(role="none")
+                          a(href=`${link.href}.html`, role="menuitem", data-load-anim)= `${link.text}-1`
+                        li(role="none")
+                          a(href=`${link.href}.html`, role="menuitem", data-load-anim)= `${link.text}-2`
+                        li(role="none")
+                          a(href=`${link.href}.html`, role="menuitem", data-load-anim)= `${link.text}-3`
+                  when 'blog'
+                    li(role="none")
+                      a.accordion__ctrl.main-menu__sublist-ctrl(
+                        href="#",
+                        role="menuitem",
+                        aria-haspopup="true",
+                        aria-expanded="false",
+                        aria-controls=`${link.href}-submenu`,
+                        data-accordion-ctrl,
+                        data-accordion-target=`${link.href}-submenu`
+                      )= `${link.text}`
+                      ul.accordion__content.main-menu__sublist(
+                        id=`${link.href}-submenu`,
+                        role="menu",
+                        aria-label=`${link.text}`
+                      )
+                        li(role="none")
+                          a(href=`${link.href}.html`, role="menuitem", data-load-anim)= `${link.text}-1`
+                        li(role="none")
+                          a(href=`${link.href}.html`, role="menuitem", data-load-anim)= `${link.text}-2`
+                  when currentPage
+                    li(role="none")
+                      span.active(role="menuitem", aria-current="page")= `${link.text}`
+                  default
+                    li(role="none")
+                      a(href=`${link.href}.html`, role="menuitem", data-load-anim)= `${link.text}`
+
+  .container
+    if (currentPage === 'index')
+      .header__hero.hero-slider(id="hero-slider")
+        .hero-slider__content
+          h1.hero-slider__title
+            span.hero-slider__title-icon we're
+            | creative agency
+          p.hero-slider__text.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+        .hero-slider__content
+          h2.hero-slider__title
+            span.hero-slider__title-icon we do
+            | creative stuff
+          p.hero-slider__text.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+    else
+      .header__hero.hero-breadcrumb
+        h1.hero-breadcrumb__title= `${paginationTitle}`
+
+        nav.hero-breadcrumb__breadcrumb(aria-label="Breadcrumb")
+          ol.hero-breadcrumb__list
+            li.hero-breadcrumb__item
+              a(href="index.html") home
+            li.hero-breadcrumb__item
+              span(aria-current="page")= `${currentPage}`

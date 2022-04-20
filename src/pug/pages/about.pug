@@ -1,0 +1,142 @@
+extends ../layout/default.pug
+
+block variables
+  //- используесят для установки активных ссылках в меню header и footer
+  //- должно соответствовать названию файла текущей страницы без расширения
+  - var currentPage = "about";
+  //- используется в inner-pagination
+  - var paginationTitle = "About us";
+
+block title
+  title= `${paginationTitle}`
+
+//- блок для вставки отдельных предзагружаемых ресурсов link(rel="preload"), кроме шрифтов
+block preload
+
+block content
+  main
+    .container
+      .page
+        section.about
+          div
+            h2.section-caption__title.about__title about us
+            h3.about__subtitle We are awesome
+            p.section-caption__desc.about__text.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+              ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+              tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+              iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+              nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+              delenit augue duis dolore te feugait nulla facilisi.
+
+          div
+            h2.section-caption__title.about__title What We Do
+            h3.about__subtitle Creative & Digital
+            p.section-caption__desc.about__text.
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+              ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+              tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+              iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+              nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+              delenit augue duis dolore te feugait nulla facilisi.
+
+        section.benefits
+          .section-caption
+            h2.section-caption__title some benefits
+            p.section-caption__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          ul.benefits__list
+            -
+              var itemsData = [
+                {title: "FULLY RESPONSIVE", icon: "phone-portrait-outline"},
+                {title: "UNLIMITED OPTIONS", icon: "infinite-outline"},
+                {title: "WORDPRESS", icon: "logo-wordpress"},
+                {title: "e-commerce", icon: "cart-outline"},
+                {title: "CUSTOMIZABLE DESIGN", icon: "options-outline"},
+                {title: "SUPPORT", icon: "construct-outline"},
+              ]
+            each item in itemsData
+              li
+                h3.benefits__title= `${item.title}`
+                  span.benefits__icon
+                    ion-icon(name=`${item.icon}`, aria-hidden="true")
+                p.benefits__text.
+                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  In eleifend suscipit enim, eu commodo neque molestie vitae.
+
+        section.team
+          .section-caption
+            h2.section-caption__title THE DREAM TEAM
+            p.section-caption__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          ul.team__members
+            -
+              var itemsData = [
+                {name: "john doe", job: "CEO / co-founder", photo: "1"},
+                {name: "jennifer toms", job: "project chied", photo: "2"},
+                {name: "jack doe", job: "graphic designer", photo: "3"},
+                {name: "anne turin", job: "art director", photo: "4"},
+                {name: "nicolas akhouad", job: "CTO", photo: "5"},
+                {name: "tim cook", job: "front-end developer", photo: "6"},
+                {name: "alan turin", job: "back-end developer", photo: "7"},
+                {name: "john whick", job: "web designer", photo: "8"},
+              ]
+            each item in itemsData
+              li.team__members-item
+                .team__members-inner
+                  .ibg.team__member-photo
+                    +webpImg(`team/member-${item.photo}.jpg`, alt=`${item.name} - ${item.job}`, width='263', height='333')
+                  .team__member-info
+                    p.team__member-name= `${item.name}`
+                    p.team__memer-job= `${item.job}`
+
+          .team__details
+            p.team__text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+            a.button.team__link(href="", target="_blank") read more
+
+        .testimonials
+          #testimonials-slider.slide.testimonials-slider
+            .splide__track.testimonials-slider__track
+              ul.splide__list.testimonials-slider__list
+                li.splide__slide.testimonials-slider__item
+                  .ibg.testimonials-slider__slide-photo
+                    +webpImg('testimonials-slider/user-photo-1.jpg', alt='JOHN DOE', width='82', height='82')
+                  p.testimonials-slider__slide-comment.
+                    Quisque iaculis lorem vestibulum eros vehicula, non congue elit dictum. Donec mollis aliquet lorem,
+                    eu porttitor sapien semper in. Duis ac erat luctus, gravida lectus sit amet, consectetur orci.
+                    Suspendisse libero mauris.
+                  p.testimonials-slider__slide-name john doe
+                li.splide__slide.testimonials-slider__item
+                  .ibg.testimonials-slider__slide-photo
+                    +webpImg('testimonials-slider/user-photo-1.jpg', alt='jennifer toms', width='82', height='82')
+                  p.testimonials-slider__slide-comment.
+                    Quisque iaculis lorem vestibulum eros vehicula, non congue elit dictum. Donec mollis aliquet lorem,
+                    eu porttitor sapien semper in. Duis ac erat luctus, gravida lectus sit amet, consectetur orci.
+                  p.testimonials-slider__slide-name jennifer toms
+                li.splide__slide.testimonials-slider__item
+                  .ibg.testimonials-slider__slide-photo
+                    +webpImg('testimonials-slider/user-photo-1.jpg', alt='tim cook', width='82', height='82')
+                  p.testimonials-slider__slide-comment.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias pariatur, tenetur,
+                    eaque architecto cupiditate possimus illum amet, dolores eos saepe cum?
+                    Culpa quam voluptates sapiente, harum minus vero provident officiis.
+                  p.testimonials-slider__slide-name tim cook
+                li.splide__slide.testimonials-slider__item
+                  .ibg.testimonials-slider__slide-photo
+                    +webpImg('testimonials-slider/user-photo-1.jpg', alt='john whick', width='82', height='82')
+                  p.testimonials-slider__slide-comment.
+                    Dead! Dead all!!! Ok, I am stutid!
+                  p.testimonials-slider__slide-name john whick
+
+          ul.testimonials-clients
+            -
+              var itemsData = [
+                {name: "Archery", imgName: "1", imgWidth: "83", imgHeight: "84"},
+                {name: "Pacificana", imgName: "2", imgWidth: "123", imgHeight: "80"},
+                {name: "Merchant", imgName: "3", imgWidth: "127", imgHeight: "87"},
+                {name: "Atelier", imgName: "4", imgWidth: "126", imgHeight: "52"},
+                {name: "Steak House", imgName: "5", imgWidth: "131", imgHeight: "68"},
+                {name: "Wattson", imgName: "6", imgWidth: "116", imgHeight: "81"},
+              ]
+            each item in itemsData
+              li.testimonials-clients__item
+                a.testimonials-clients__link(href="#", target="_blank", rel="noopener noreferrer")
+                  +webpImg(`clients/client-${item.imgName}.png`, alt=`${item.name}`, width=`${item.imgWidth}`, `${item.imgHeight}`)

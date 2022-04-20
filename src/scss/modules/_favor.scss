@@ -1,0 +1,118 @@
+.favor {
+  padding: 4rem 0 4.8rem;
+
+  @media (min-width: $screen-md) {
+    padding: 7rem 0 7.8rem;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.favor__title {
+  margin-bottom: 10px;
+}
+
+.favor__text {
+  font-size: 1.4rem;
+  line-height: 1.71;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.favor__row {
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.favor__list {
+  display: block;
+  margin: 0 0 30px 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $screen-sm) {
+    flex: 0 1 55%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+  }
+
+  @media (min-width: $screen-md) {
+    margin: 0 30px 0 0;
+    padding-top: 14px;
+  }
+
+  @media (min-width: $screen-lg) {
+    gap: 53px 31px;
+    padding-bottom: 3.3rem;
+  }
+}
+
+.favor__item {
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-sm) {
+    margin: 0;
+  }
+
+  ion-icon {
+    font-size: 3.6rem;
+    color: inherit;
+  }
+}
+
+.favor__item-title {
+  margin: 0 0 1rem;
+  font-family: $second-font;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.47;
+  text-transform: uppercase;
+}
+
+.favor__img-wrap {
+  width: 360px;
+  max-width: 100%;
+  padding-top: 50%;
+  margin: 0 auto;
+
+  @media (min-width: $screen-md) {
+    flex: 0 1 40%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+.favor__sublist {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 -30px;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 2;
+  text-transform: uppercase;
+  color: $lighten-grey;
+  list-style: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+    margin: 0;
+  }
+}
+
+.favor__subitem {
+  margin-bottom: 5px;
+  margin-left: 30px;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 1px;
+    margin-left: 0;
+  }
+}

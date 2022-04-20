@@ -1,0 +1,67 @@
+// Файл с базовымы глобальными настройками стилей
+
+html {
+  box-sizing: border-box;
+  // Проценты для возмоности изменения шрифта пользователем браузера
+  font-size: 56.25%; // 9/16 * 100%
+
+  @media (min-width: $screen-lg) {
+    font-size: 62.5%; // 62.5% * 16 = 10, где 16 - стандарный шрифт HTML элемента в браузерах, 10 - значение для расчетра rem
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  // для позиционирования футера внизу страницы даже при нехватке контента
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $main-font;
+  font-size: $main-font-size;
+  line-height: 1.875;
+  color: $light-grey;
+  background-color: $white;
+
+  // класс добавляется при открытии мобильного меню, модальных окон
+  &.locked {
+    overflow: hidden;
+  }
+
+  // прижимаем футер к низу страницы даже если мало контента
+  & > footer {
+    margin-top: auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+svg {
+  pointer-events: none;
+}
+
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+a,
+// area,
+button,
+[role="button"],
+input,
+label,
+select,
+// summary,
+textarea {
+  touch-action: manipulation;
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}

@@ -1,0 +1,65 @@
+// расширения для SCSS препроцессора
+@use "sass:color";
+@use "sass:math";
+@use "sass:meta";
+
+// импорт стилей внешних библиотек
+// слайдер SplideJS
+@import "~@splidejs/splide/src/css/core/index";
+// анимированное появление блоков при прокрутке - AOS
+@import "~aos/src/sass/aos";
+
+// импорт вспомагательных файлов
+// содержащих вспомогательные классы, переменные, миксины, базовые общие стили
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./utils/utils";
+@import "./utils/fonts";
+@import "./utils/scaffolding";
+@import "./utils/typo";
+
+// импорт базовых стилей, часто повторяющихся на многих проектах
+@import "./base/container";
+@import "./base/page";
+@import "./base/accordion";
+@import "./base/button";
+@import "./base/custom-input";
+@import "./base/embed";
+@import "./base/menu-burger";
+@import "./base/page-pagination";
+
+// импорт модулей текущего проекта
+@import "./modules/section-caption";
+@import "./modules/list-checkbox";
+@import "./modules/header";
+@import "./modules/header-menu";
+@import "./modules/main-menu";
+@import "./modules/hero-slider";
+@import "./modules/hero-breadcrumb";
+@import "./modules/history";
+@import "./modules/favor";
+@import "./modules/portfolio";
+@import "./modules/portfolio-category";
+@import "./modules/contact-footer";
+@import "./modules/cooperate-form";
+@import "./modules/subscribe-form";
+@import "./modules/footer";
+@import "./modules/footer-menu";
+@import "./modules/social-menu";
+@import "./modules/contact";
+@import "./modules/contact-form";
+@import "./modules/contact-info";
+@import "./modules/about";
+@import "./modules/benefits";
+@import "./modules/team";
+@import "./modules/testimonials";
+@import "./modules/testimonials-slider";
+@import "./modules/testimonials-clients";
+@import "./modules/what-do";
+@import "./modules/pricing";
+@import "./modules/blogs";
+@import "./modules/blog-filter";
+@import "./modules/post-search";
+@import "./modules/post-filter";
+@import "./modules/post-category";
+@import "./modules/post-tags";

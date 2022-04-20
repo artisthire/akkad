@@ -1,0 +1,30 @@
+// общий класс для задания вертикального ритма рассположения блоков
+// и/или стилизации общих заголовочных блоков секций
+.page {
+  padding-top: 10rem;
+
+  & > * {
+    margin-bottom: 10rem;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding-top: 15rem;
+
+    & > * {
+      margin-bottom: 15rem;
+    }
+  }
+}
+
+.page__blog {
+  @media (min-width: $screen-lg) {
+    display: grid;
+    grid-template-columns: 1fr 26rem;
+    align-items: flex-start;
+    column-gap: 7rem;
+  }
+
+  @media (min-width: $screen-xl) {
+    column-gap: 12.8rem;
+  }
+}

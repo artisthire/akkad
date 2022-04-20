@@ -1,0 +1,47 @@
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+  padding: 0;
+  text-transform: uppercase;
+  list-style: none;
+
+  @media (min-width: $screen-md) {
+    margin: 0 20px 20px 0;
+  }
+}
+
+.footer-menu__item {
+  margin-right: 15px;
+
+  &::after {
+    content: "-";
+    display: inline;
+    margin-left: 1.5rem;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}
+
+.footer-menu__link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: $light-green;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}

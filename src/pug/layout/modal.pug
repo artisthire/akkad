@@ -1,0 +1,10 @@
+block vars
+
+.modal(id=`${modalId}`, class={"modal--inner-page": isFallbackModalView === true})
+  .modal__content.js-modal-content
+    h1.modal__title= `${modalTitle}`
+
+    block content
+
+    button.modal__close-btn.js-modal-close-btn(type="button")
+      span.visually-hidden Закрыть окно

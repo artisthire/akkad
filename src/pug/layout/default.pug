@@ -1,0 +1,19 @@
+block variables
+
+include ../utils/mixins.pug
+
+doctype html
+html.no-js(lang="en")
+  head
+    block title
+    include ../includes/head.pug
+    block preload
+
+  body
+    include ../includes/header.pug
+
+    block content
+
+    include ../includes/footer.pug
+
+    block modals

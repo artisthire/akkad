@@ -1,0 +1,101 @@
+.portfolio {
+  padding: 4.8rem 0 9.6rem;
+  overflow: hidden;
+
+  @media (min-width: $screen-md) {
+    padding: 5.8rem 0 12.8rem;
+  }
+}
+
+.portfolio__grid {
+  position: relative;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.portfolio__category {
+  margin-bottom: 2rem;
+
+  @media (min-width: $screen-md) {
+    flex: 1 0 200px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+}
+
+.portfolio__examples {
+  margin: 0;
+  padding: 0;
+  column-count: 2;
+  column-gap: 15px;
+
+  @media (min-width: $screen-sm) {
+    column-count: 3;
+    column-gap: 30px;
+  }
+
+  @media (min-width: $screen-md) {
+    flex: 0 1 850px;
+  }
+
+  @media (any-hover: hover) {
+    // сделать серымы все элементы внутри контейнера,
+    // которые сейчас не в фокусе
+    &:hover .portfolio__examples-item img {
+      filter: grayscale(1) blur(1px);
+    }
+
+    &:hover .portfolio__examples-item:hover img {
+      filter: grayscale(0);
+    }
+  }
+}
+
+// перестройка сетки для корректной работы ShuffleFilter
+.js .portfolio__examples {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex: 0 1 880px;
+  margin-right: -15px;
+  column-count: auto;
+  column-gap: 0;
+
+  @media (min-width: $screen-sm) {
+    margin-right: -30px;
+  }
+}
+
+.portfolio__examples-item {
+  display: block;
+  margin-bottom: 15px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  @media (min-width: $screen-sm) {
+    margin-bottom: 30px;
+  }
+
+  & img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// перестройка сетки для корректной работы ShuffleFilter
+.js .portfolio__examples-item {
+  width: calc(50% - 15px);
+  margin: 0 15px 15px 0;
+
+  @media (min-width: $screen-sm) {
+    width: calc(33.3333% - 30px);
+    margin: 0 30px 30px 0;
+  }
+}

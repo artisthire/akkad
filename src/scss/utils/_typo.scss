@@ -1,0 +1,29 @@
+// Типографика
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $second-font;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+button,
+a {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @media (any-hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

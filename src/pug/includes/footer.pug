@@ -1,0 +1,64 @@
+footer.footer
+  .contact-footer(data-aos="fade-up")
+    .container
+      .contact-footer__grid
+        .contact-footer__cooperate.cooperate-form
+          h2.cooperate-form__title YOU THINK WE'RE COOL&nbsp;? LET'S WORK TOGETHER
+          a.button.button--invert.cooperate-form__link(
+            href="#",
+            target="_blank",
+            rel="noopener noreferrer"
+          ) get in touch
+
+        form.contact-footer__subscribe.subscribe-form(
+          action="#",
+          method="post",
+          name="subscribe-form"
+        )
+          h2.subscribe-form__title STAY INFORMED WITH OUR <br>NEWSLETTER
+          p.subscribe-form__text.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          p.custom-input.subscribe-form__row
+            input.custom-input__input.subscribe-form__input(
+              type="email",
+              name="subscribe-email",
+              id="subscribe-email",
+              placeholder="Your email",
+              required
+            )
+            label.custom-input__placeholder(for="subscribe-email") Your email
+            button.button.subscribe-form__submit(type="submit") send
+
+  .container
+    .footer__menu
+      ul.footer-menu
+        -
+          var linkData = [
+            {href: "index", text: "Home"},
+            {href: "about", text: "About us"},
+            {href: "services", text: "Services"},
+            {href: "portfolio", text: "Portfolio"},
+            {href: "blog", text: "Blog"},
+            {href: "contact", text: "Contact us"},
+          ]
+        each link in linkData
+          if (currentPage === link.href)
+            li.footer-menu__item
+              span.footer-menu__link.active= `${link.text}`
+          else
+            li.footer-menu__item
+              a.footer-menu__link(href=`${link.href}.html`, data-load-anim)= `${link.text}`
+
+      .footer__inner
+        p.footer__copyright Created by akhouad 2016. All Rights Reserved
+        ul.social-menu
+          each social in ["facebook", "twitter", "youtube", "linkedin", "pinterest", "instagram"]
+            li.social-menu__item
+              a.social-menu__link(
+                href="#",
+                target="_blank",
+                rel="noopener noreferrer",
+                aria-label=`${social}`
+              )
+                ion-icon(name=`logo-${social}`)

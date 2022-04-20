@@ -1,0 +1,127 @@
+//// .blogs
+.blogs {
+  & > *:not(:last-child) {
+    margin: 0;
+    margin-bottom: 7.5rem;
+  }
+
+  @media (min-width: $screen-lg) {
+    & > *:not(:last-child) {
+      margin: 0;
+      margin-bottom: 10rem;
+    }
+  }
+}
+
+//// .blogs__media
+.blogs__media {
+  margin-bottom: 3rem;
+}
+
+//// .blogs__info
+.blogs__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.4rem;
+  margin: 0;
+  font-family: $second-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #cccccc;
+
+  &:not(:last-child) {
+    margin-bottom: 1.8rem;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  & > * {
+    margin: 0;
+  }
+}
+
+//// .blog__date
+.blog__date {
+  display: inline-block;
+  padding: 1rem 2rem 1rem 1.5rem;
+  color: $white;
+  background-color: $light-green;
+}
+
+//// .blogs__info-icon
+.blogs__info-icon {
+  display: inline-block;
+  margin-right: 0.8rem;
+  font-size: 1.8rem;
+  vertical-align: middle;
+
+  &--red {
+    color: #ea6a6a;
+  }
+}
+
+//// .blogs__title
+.blogs__title {
+  margin: 0;
+  font-family: $second-font;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    margin-bottom: 1.9rem;
+  }
+}
+
+//// .blogs__text
+.blogs__text {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.71;
+  color: $lighten-grey;
+
+  &:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+//// .blog__link
+.blog__link {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 0;
+  font-family: $second-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 1.8rem;
+  }
+
+  & > ion-icon,
+  & > svg {
+    margin-left: 0.7rem;
+    transform-origin: 0 50%;
+    transition: transform 0.3s linear;
+  }
+
+  @media (any-hover: hover) {
+    &:hover > ion-icon,
+    &:hover > svg {
+      transform: scaleX(2);
+    }
+  }
+}
+
+//// .blogs__pagination
+.blogs__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,92 @@
+extends ../layout/default.pug
+
+block variables
+  //- используесят для установки активных ссылках в меню header и footer
+  //- должно соответствовать названию файла текущей страницы без расширения
+  - var currentPage = "contact";
+  //- используется в inner-pagination
+  - var paginationTitle = "Contact us";
+
+block title
+  title= `${paginationTitle}`
+
+//- блок для вставки отдельных предзагружаемых ресурсов link(rel="preload"), кроме шрифтов
+block preload
+
+block content
+  main
+    .container
+      .page
+        section.contact
+          .contact__row
+            .contact__column
+              form.contact-form(action="#", method="post", name="contact-form")
+                .contact-form__row
+                  p.custom-input.contact-form__input-wrap
+                    //- label за input и используется через селектор ~ для анимированного перемещения
+                    input.custom-input__input(
+                      id="user-name",
+                      type="text",
+                      name="user-name",
+                      placeholder="your name",
+                      required
+                    )
+                    label.custom-input__placeholder(for="user-name") your name
+
+                  p.custom-input.contact-form__input-wrap
+                    input.custom-input__input(
+                      id="user-email",
+                      type="email",
+                      name="user-email",
+                      placeholder="your email",
+                      required
+                    )
+                    label.custom-input__placeholder(for="user-email") your email
+
+                p.custom-input.contact-form__input-wrap
+                  input.custom-input__input(
+                    id="object",
+                    type="text",
+                    name="object",
+                    placeholder="object",
+                    required
+                  )
+                  label.custom-input__placeholder(for="object") object
+
+                p.custom-input.contact-form__input-wrap
+                  textarea.custom-input__input(
+                    id="message",
+                    name="message",
+                    cols="30",
+                    rows="10",
+                    placeholder="message"
+                  )
+                  label.custom-input__placeholder(for="message") message
+
+                button.contact-form__submit-btn.button(type="submit") send
+
+              .contact-info
+                h2.contact-info__title CONTACT INFO
+                p Lorem ipsum dolor sit amet, conse adipisicing elit. Libero incidunt quod ab mollitia quia dolorum conse.
+                .contact-info__address
+                  p.contact-info__post 13D, Functional apartment, Unique colony, Agadir 86360
+                  a(href="tel:+212124566780") +212 124-566-780
+                  a(href="tel:+212124566780") +212 124-566-780
+                  a(href="mailto:email@website.com") email@website.com
+
+                ul.social-menu.contact-info__social
+                  each social in ["facebook", "twitter", "youtube", "linkedin", "pinterest", "instagram"]
+                    li.social-menu__item
+                      a.social-menu__link(
+                        href="#",
+                        target="_blank",
+                        rel="noopener noreferrer",
+                        aria-label=`${social}`
+                      )
+                        ion-icon(name=`logo-${social}`)
+
+            .contact__column
+              h2.visually-hidden Our geolocation
+              #contact-map.contact__map
+
+block modals

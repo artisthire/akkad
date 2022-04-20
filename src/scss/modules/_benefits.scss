@@ -1,0 +1,61 @@
+//// .benefits__list
+.benefits__list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > :not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: $screen-md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 3rem;
+
+    & > :not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+//// .benefits__title
+.benefits__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-family: $second-font;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.benefits__icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  order: -1;
+  flex: 0 0 4rem;
+  height: 4rem;
+  margin-right: 2rem;
+  padding: 0.3rem 0.6rem;
+  background-color: $light-green;
+
+  & ion-icon {
+    height: 100%;
+    width: 100%;
+    color: $white;
+  }
+}
+
+//// .benefits__text
+.benefits__text {
+  font-size: 1.4rem;
+  line-height: 2.14;
+}

@@ -1,0 +1,32 @@
+//// .post-tags__list
+.post-tags__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+//// .post-tags__link
+.post-tags__link {
+  display: block;
+  padding: 1rem 1.8rem;
+  font-family: $second-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $lighten-grey;
+  background-color: #e5e5e5;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #bdbcbc;
+    }
+  }
+}

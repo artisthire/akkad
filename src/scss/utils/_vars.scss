@@ -1,0 +1,34 @@
+// Файл с переменными
+
+// Шрифты для проекта
+$main-font: "Open Sans", "Arial", sans-serif;
+$second-font: "Montserrat", "Tahoma", sans-serif;
+$main-font-size: 1.6rem;
+
+// Основные цвета проекта
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$transparent: rgba(255, 255, 255, 0);
+$light-grey: #60606e;
+$lighten-grey: #999999;
+$light-green: #7beec7;
+
+// Значения ширин экранов для адаптивности
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1400px;
+// максимальное значение экрана - максимальная ширина макета, для гибких макетов без ограничивающего контейнера
+$screen-max-width: 1400px;
+
+/*
+// Значения ширин экранов для адаптивности
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1400px;
+// максимальное значение экрана - максимальная ширина макета, для гибких макетов без ограничивающего контейнера
+$screen-max-width: 1600px;
+*/

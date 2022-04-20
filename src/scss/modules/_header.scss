@@ -1,0 +1,107 @@
+.header {
+  position: relative;
+  min-height: 650px;
+  background: url("../../assets/img/hero-bgn.jpg") no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  background-color: #dde0e1;
+
+  @media (min-width: $screen-md) {
+    min-height: 750px;
+  }
+
+  @media (min-width: $screen-lg) {
+    min-height: 850px;
+  }
+
+  // "покрывало" для затенения картинки в бекграунде
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    opacity: 0.85;
+  }
+
+  &--inner {
+    min-height: 400px;
+    background-image: url("../../assets/img/hero-bgn--inner.jpg");
+
+    @media (min-width: $screen-md) {
+      min-height: 450px;
+    }
+
+    @media (min-width: $screen-lg) {
+      min-height: 500px;
+    }
+
+    &::before {
+      opacity: 0.15;
+    }
+  }
+}
+
+.webp .header {
+  background-image: url("../../assets/img/hero-bgn.webp");
+
+  &--inner {
+    background-image: url("../../assets/img/hero-bgn--inner.webp");
+  }
+}
+
+// блок используется в JS для Intersection Observer
+// и при выходе его за границы видимости браузера
+// .header__inner получает непрозрачный фон
+// чтобы текст в меню было хорошо видно на фоне основной страницы
+.header__menu-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // задает величину, после прокрутки на которую элемент попадает вне viewport
+  min-height: 5px;
+
+  @media (min-width: $screen-sm) {
+    min-height: 10rem;
+  }
+}
+
+.header__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+.no-js .header__menu {
+  position: static;
+}
+
+.header__hero {
+  position: relative;
+  margin: 145px auto 0;
+
+  @media (min-width: $screen-md) {
+    margin-top: 105px;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-top: 145px;
+  }
+
+  .header--inner & {
+    margin-top: 200px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 230px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-top: 250px;
+    }
+  }
+}

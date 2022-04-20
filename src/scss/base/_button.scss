@@ -1,0 +1,73 @@
+.button {
+  // var
+  $padding-v: 1px;
+  $padding-h: 4rem;
+  $brd-width: 0;
+  $brd-color: $black;
+  $font-family: $second-font;
+  $font-size: 1.4rem;
+  $font-weight: 700;
+  $font-color: $white;
+  $line-height: 2.8;
+  $bgn-color: $light-green;
+  $bgn-color--hover: color.scale($light-green, $lightness: 10%);
+  $shadow-h: 0;
+  $shadow-v: 0;
+  $shadow-blur: 0;
+  $shadow-spread: 0;
+  $shadow-color: $black;
+  $shadow-h--hover: 0;
+  $shadow-v--hover: 0;
+  $shadow-blur--hover: 10px;
+  $shadow-spread--hover: 0;
+  $shadow-color--hover: color.scale($light-grey, $alpha: 50%);
+  $transition-dur: 0.2s;
+  $transfrom-scale: 1.01;
+  // /var
+
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: $padding-v $padding-h;
+  border: $brd-width solid $brd-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $font-color;
+  box-shadow: $shadow-h $shadow-v $shadow-blur $shadow-spread $shadow-color;
+  background-color: $bgn-color;
+  cursor: pointer;
+  user-select: none;
+  transition-property: box-shadow, color, background-color, transform;
+  transition-duration: $transition-dur;
+  transition-timing-function: ease-in-out;
+
+  @media (min-width: $screen-md) {
+    line-height: 3.428;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $bgn-color--hover;
+    box-shadow: $shadow-h--hover $shadow-v--hover $shadow-blur--hover $shadow-spread--hover
+      $shadow-color--hover;
+    transform: scale($transfrom-scale);
+  }
+
+  &--invert {
+    background-color: $white;
+    color: $light-green;
+
+    &:hover,
+    &:focus {
+      background-color: rgb(247, 242, 242);
+    }
+  }
+}

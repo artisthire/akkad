@@ -1,0 +1,180 @@
+extends ../layout/default.pug
+
+block variables
+  //- используесят для установки активных ссылках в меню header и footer
+  //- должно соответствовать названию файла текущей страницы без расширения
+  - var currentPage = "blog";
+  //- используется в inner-pagination
+  - var paginationTitle = "Blog posts";
+
+block title
+  title= `${paginationTitle}`
+
+//- блок для вставки отдельных предзагружаемых ресурсов link(rel="preload"), кроме шрифтов
+block preload
+
+block content
+  main
+    .container
+      .page.page--blog
+        .page__blog
+          section.blogs
+            .blogs__item
+              .embed.blogs__media
+                +webpImg(`blog/blog-img-1.jpg`, alt=`Blog img`, width='750', height='500')
+              .blogs__info
+                time.blog__date(datetime="2015-10-13") October 13, 2015
+                p
+                  ion-icon.blogs__info-icon(name="chatbox-ellipses", aria-label="comments")
+                  | 8
+                p
+                  ion-icon.blogs__info-icon.blogs__info-icon--red(name="heart", aria-label="likes")
+                  | 15
+              h2.blogs__title The big LEAGUES OUR TURN STRAIGHTNIN
+              p.blogs__text.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur.
+              a.blog__link(href="#") continue reading
+                ion-icon(name="arrow-forward-outline", aria-hidden="true")
+            .blogs__item
+              .embed.blogs__media
+                +webpImg(`blog/blog-img-1.jpg`, alt=`Blog img`, width='750', height='500')
+              .blogs__info
+                time.blog__date(datetime="2015-10-13") October 13, 2015
+                p
+                  ion-icon.blogs__info-icon(name="chatbox-ellipses", aria-label="comments")
+                  | 8
+                p
+                  ion-icon.blogs__info-icon.blogs__info-icon--red(name="heart", aria-label="likes")
+                  | 15
+              h2.blogs__title The big LEAGUES OUR TURN STRAIGHTNIN
+              p.blogs__text.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur.
+              a.blog__link(href="#") continue reading
+                ion-icon(name="arrow-forward-outline", aria-hidden="true")
+            .blogs__item
+              .embed.blogs__media
+                +webpImg(`blog/blog-img-1.jpg`, alt=`Blog img`, width='750', height='500')
+              .blogs__info
+                time.blog__date(datetime="2015-10-13") October 13, 2015
+                p
+                  ion-icon.blogs__info-icon(name="chatbox-ellipses", aria-label="comments")
+                  | 8
+                p
+                  ion-icon.blogs__info-icon.blogs__info-icon--red(name="heart", aria-label="likes")
+                  | 15
+              h2.blogs__title The big LEAGUES OUR TURN STRAIGHTNIN
+              p.blogs__text.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur.
+              a.blog__link(href="#") continue reading
+                ion-icon(name="arrow-forward-outline", aria-hidden="true")
+
+            .blogs__pagination.page-pagination
+              a.page-pagination__link(href="#")
+                ion-icon.page-pagination__icon.page-pagination__icon--prev(
+                  name="arrow-back-outline",
+                  aria-hidden="true"
+                )
+                | Previous
+              span.page-pagination__delimer(aria-hidden="true") /
+              a.page-pagination__link(href="#") Next
+                ion-icon.page-pagination__icon(name="arrow-forward-outline", aria-hidden="true")
+
+          aside.blog-filter
+            form.post-search(action="#", method="get", name="blog-search")
+              p.post-search__input-wrap
+                input#post-search.post-search__input(
+                  type="search",
+                  name="search-query",
+                  placeholder="Search...",
+                  required
+                )
+                label.visually-hidden(for="post-search") Search...
+                button.post-search__submit(type="submit")
+                  ion-icon(name="search", aria-label="submit")
+
+            .post-filter
+              h3.blog-filter__title posts
+
+              ul#post-filter-ctrl-container.post-filter__list
+                - var items = ["lastes", "popular", "comments"];
+                each item in items
+                  li.post-filter__list-item
+                    a.post-filter__link.js-post-filter-ctrl(
+                      class={active: item === "lastes"},
+                      href="#",
+                      data-group=`${item}`
+                    )= `${item}`
+
+              ol#post-filter.post-filter__posts
+                -
+                  var itemsData = [
+                    {img: "1", title: "Magna mollis ultricies", groups: "lastes"},
+                    {img: "2", title: "Magna mollis ultricies", groups: "lastes"},
+                    {img: "3", title: "Magna mollis ultricies", groups: "lastes"},
+                    {img: "2", title: "Magna 1", groups: "popular"},
+                    {img: "3", title: "Magna manga", groups: "popular"},
+                    {img: "3", title: "Post 7", groups: "comments"},
+                    {img: "1", title: "Magna 8", groups: "comments"},
+                    {img: "1", title: "Magna 9", groups: "comments"},
+                    {img: "2", title: "Magna 10", groups: "comments"},
+                  ];
+
+                each item in itemsData
+                  li.post-filter__posts-item.js-post-filter-item(data-groups=`${item.groups}`)
+                    a.post-filter__post(href="#")
+                      .ibg.post-filter__img
+                        +webpImg(`blog/posts/post-img-${item.img}.jpg`, alt=`Post image`, width='80', height='80')
+                      p.post-filter__post-title= `${item.title}`
+                        time.post-filter__date(datetime="2012-10-03") 3th oct 2012
+
+            .post-category
+              h3.blog-filter__title categories
+
+              ul.post-category__list
+                -
+                  var itemsData = [
+                    {category: "Business", total: "15"},
+                    {category: "Photography", total: "17"},
+                    {category: "Journal", total: "22"},
+                    {category: "Web devlopment", total: "30"},
+                  ];
+                each item in itemsData
+                  li
+                    a.post-category__link(href="#")
+                      span= `${item.category} `
+                      i= `${item.total}`
+
+            .post-tags
+              h3.blog-filter__title tags
+
+              ul.post-tags__list
+                - var items = ["css", "javascript", "jquery", "html5", "bootstrap", "css", "javascript", "jquery"];
+                each item in items
+                  li
+                    a.post-tags__link(href="#")= `${item}`
+
+            .post-category
+              h3.blog-filter__title archives
+
+              ul.post-category__list
+                -
+                  var itemsData = [
+                    {category: "Business", total: "15"},
+                    {category: "Photography", total: "17"},
+                    {category: "Journal", total: "22"},
+                    {category: "Web devlopment", total: "30"},
+                  ];
+                each item in itemsData
+                  li
+                    a.post-category__link(href="#")
+                      span= `${item.category} `
+                      i= `${item.total}`

@@ -1,0 +1,58 @@
+//- For put image in WEBP and JPG formats
+mixin webpImg(name, alt="", width, height, sourcePatch="./assets/img/")
+  -
+    var fName = name.split('.')[0];
+    var fExt = name.split('.')[1];
+  picture
+    source(srcset=`${sourcePatch}${fName}.webp`, type="image/webp")
+    img(
+      class!=attributes.class,
+      src=`${sourcePatch}${fName}.${fExt}`,
+      alt=alt,
+      width=width,
+      height=height,
+      loading="lazy",
+      decoding="async"
+    )
+
+//- For put image in WEBP and Retin
+mixin retinWebpImg(name, alt= "", width, height, sourcePatch= "./assets/img/")
+  -
+    var fName = name.split('.')[0];
+    var fExt = name.split('.')[1];
+  picture
+    source(
+      srcset=`${sourcePatch}${fName}.webp 1x, ${sourcePatch}${fName}@2x.webp 2x`,
+      type="image/webp"
+    )
+    img(
+      class!=attributes.class,
+      src=`${sourcePatch}${fName}.${fExt}`,
+      srcset=`${sourcePatch}${fName}.${fExt} 1x, ${sourcePatch}${fName}@2x.${fExt} 2x`,
+      alt=alt,
+      width=width,
+      height=height,
+      loading="lazy",
+      decoding="async"
+    )
+
+//- Put external SVG-sprite
+mixin extSvgSprite(symbolId, width, height, fileName= "svg-sprite", sourcePatch= "./assets/img/")
+  svg(style!=attributes.style, class!=attributes.class, width=width, height=height, aria-hidden="true")
+    use(xlink:href=`${sourcePatch}${fileName}.svg#${symbolId}`)
+
+//- Is Webp format support
+
+mixin supportWebp
+  picture(style="display: none")
+    source(
+      type="image/webp",
+      srcset="data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA 1x"
+    )
+    img(
+      src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/2wBDAAMDAwMDAwMDAwMEBAQEBAYFBQUFBgkGBwYHBgkOCAoICAoIDgwPDAsMDwwWEQ8PERYZFRQVGR4bGx4mJCYyMkP/wgALCAABAAEBAREA/8QAFAABAAAAAAAAAAAAAAAAAAAACf/aAAgBAQAAAABU/wD/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/AH//2Q==",
+      decoding="sync",
+      alt="",
+      aria-hidden="true",
+      onload="if(this.currentSrc.includes('webp')){document.documentElement.classList.add('webp');}else{document.documentElement.classList.add('no-webp');}"
+    )

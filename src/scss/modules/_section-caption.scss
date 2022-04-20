@@ -1,0 +1,51 @@
+.section-caption {
+  max-width: 750px;
+  margin: 0 auto 5.5rem;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 10.5rem;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-caption__title {
+  position: relative;
+  z-index: 1;
+  width: max-content;
+  margin: 0 auto 5px;
+  font-family: $second-font;
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-md) {
+    font-size: 3rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+    width: 6.5rem;
+    height: 2rem;
+    background-color: $light-green;
+
+    @media (min-width: $screen-md) {
+      width: 7rem;
+    }
+  }
+}
+
+.section-caption__desc {
+  font-size: 1.4rem;
+  line-height: 1.71;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}

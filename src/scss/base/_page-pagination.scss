@@ -1,0 +1,38 @@
+// переключатели страницы Вперед/Назад
+//// .page-pagination
+.page-pagination {
+  font-family: $second-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  //// .page-pagination--next
+  &--prev {
+    .page-pagination__icon {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+//// .page-pagination__delimer
+.page-pagination__delimer {
+  margin: 0 2rem;
+}
+
+//// .page-pagination__link
+.page-pagination__link {
+  &:hover .page-pagination__icon {
+    transform: scaleX(2);
+  }
+}
+
+//// .page-pagination__icon
+.page-pagination__icon {
+  margin: 0 0.8rem;
+  transform-origin: 0 50%;
+  transition: transform 0.3s linear;
+
+  &--prev {
+    transform-origin: 100% 50%;
+  }
+}

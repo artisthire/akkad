@@ -1,0 +1,64 @@
+//// .contact__row
+.contact__row {
+  @media (min-width: $screen-lg) {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+
+//// .contact__column
+.contact__column {
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-lg) {
+    flex: 1 1 50%;
+    margin-bottom: 0;
+  }
+}
+
+//// .contact__map
+.contact__map {
+  position: relative;
+  // чтобы элементы интерактивных карт не "вылезали" поверх попапов и меню
+  z-index: 1;
+  height: 500px;
+
+  @media (min-width: $screen-sm) {
+    height: 700px;
+  }
+
+  @media (min-width: $screen-md) {
+    height: 860px;
+  }
+
+  @media (min-width: $screen-lg) {
+    height: 100%;
+  }
+
+  // с учетом карт, которые вставляются через iframe
+  & img,
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// альтернативная карта, которая загружается только при неработающем JS
+.no-js .contact__map::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/img/contact/contact-geolocation.png") center/cover no-repeat;
+
+  @include retina {
+    background-image: url("../../assets/img/contact/contact-geolocation@2x.png");
+  }
+}

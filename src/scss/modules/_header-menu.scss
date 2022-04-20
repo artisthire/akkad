@@ -1,0 +1,100 @@
+.header-menu {
+  background-color: $white;
+
+  @media (min-width: $screen-md) {
+    background-color: $transparent;
+    // дополнительная стилизация для fixed меню, чтобы не было наложения меню на другие элементы страницы
+    &.scrolled {
+      background-color: color.adjust($white, $alpha: -0.05);
+    }
+  }
+}
+
+.header-menu__grid {
+  // var
+  --header-height: 7rem;
+  //- var
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--header-height);
+
+  @media (min-width: $screen-md) {
+    --header-height: 10rem;
+    justify-content: flex-start;
+  }
+}
+
+.no-js .header-menu__grid {
+  display: block;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+  }
+}
+
+.header-menu__logo {
+  margin: 0 15px 0 0;
+  padding: 10px 0;
+  font-family: $second-font;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.6;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.header-menu__logo {
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.header-menu__burger {
+  display: block;
+
+  @media (min-width: $screen-md) {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+.no-js .header-menu__burger {
+  display: none;
+  pointer-events: none;
+}
+
+.header-menu__menu {
+  position: fixed;
+  // сдвиг вниз на величину высоты шапки меню .header-menu__grid на мобильных устройствах
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s linear;
+
+  &.expanded {
+    transform: translateX(0);
+  }
+
+  @media (min-width: $screen-md) {
+    position: static;
+    width: auto;
+    margin-left: auto;
+    padding-top: 0;
+    transform: none;
+    transition: none;
+
+    &.expanded {
+      transform: none;
+    }
+  }
+}
+
+.no-js .header-menu__menu {
+  position: static;
+  transform: translateX(0);
+  transition: none;
+}
