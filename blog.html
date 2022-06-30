@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>Blog posts</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./assets/favicons/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="./assets/favicons/favicon-16x16.png" type="image/png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link type="font/woff2" href="./assets/fonts/montserrat-v18-latin-regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/montserrat-v18-latin-700.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/open-sans-v26-latin-regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/normalize.min.css">
+    <script src="./assets/js/checkSupport.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+  <script defer src="./assets/js/app.min.js"></script><link href="./assets/css/style.min.css" rel="stylesheet"></head>
+  <body>
+    <picture style="display: none">
+      <source type="image/webp" srcset="data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA 1x"><img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/2wBDAAMDAwMDAwMDAwMEBAQEBAYFBQUFBgkGBwYHBgkOCAoICAoIDgwPDAsMDwwWEQ8PERYZFRQVGR4bGx4mJCYyMkP/wgALCAABAAEBAREA/8QAFAABAAAAAAAAAAAAAAAAAAAACf/aAAgBAQAAAABU/wD/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/AH//2Q==" decoding="sync" alt="" aria-hidden="true" onload="if(this.currentSrc.includes('webp')){document.documentElement.classList.add('webp');}else{document.documentElement.classList.add('no-webp');}">
+    </picture>
+    <header class="header header--inner">
+      <div class="header__menu-wrap" data-observer data-observer-target="header-menu">
+        <div class="header__menu header-menu" id="header-menu">
+          <div class="container">
+            <div class="header-menu__grid"><a class="header-menu__logo" href="index.html" data-load-anim>Akad.</a>
+              <button class="header-menu__burger menu-burger" type="button" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent" data-burger data-burger-target="navbarSupportedContent"><span></span></button>
+              <nav class="header-menu__menu main-menu" id="navbarSupportedContent" aria-label="Main menu">
+                <ul class="main-menu__list" role="menubar" aria-label="Main menu" data-burger-navmenu>
+                  <li role="none"><a href="index.html" role="menuitem" data-load-anim>Home</a></li>
+                  <li role="none"><a class="accordion__ctrl main-menu__sublist-ctrl" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="services-submenu" data-accordion-ctrl data-accordion-target="services-submenu">Services</a>
+                    <ul class="accordion__content main-menu__sublist" id="services-submenu" role="menu" aria-label="Services">
+                      <li role="none"><a href="services.html" role="menuitem" data-load-anim>Services-1</a></li>
+                      <li role="none"><a href="services.html" role="menuitem" data-load-anim>Services-2</a></li>
+                      <li role="none"><a href="services.html" role="menuitem" data-load-anim>Services-3</a></li>
+                    </ul>
+                  </li>
+                  <li role="none"><a href="about.html" role="menuitem" data-load-anim>About us</a></li>
+                  <li role="none"><a href="contact.html" role="menuitem" data-load-anim>Contact us</a></li>
+                  <li role="none"><a class="accordion__ctrl main-menu__sublist-ctrl" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="blog-submenu" data-accordion-ctrl data-accordion-target="blog-submenu">Blog</a>
+                    <ul class="accordion__content main-menu__sublist" id="blog-submenu" role="menu" aria-label="Blog">
+                      <li role="none"><a href="blog.html" role="menuitem" data-load-anim>Blog-1</a></li>
+                      <li role="none"><a href="blog.html" role="menuitem" data-load-anim>Blog-2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header__hero hero-breadcrumb">
+          <h1 class="hero-breadcrumb__title">Blog posts</h1>
+          <nav class="hero-breadcrumb__breadcrumb" aria-label="Breadcrumb">
+            <ol class="hero-breadcrumb__list">
+              <li class="hero-breadcrumb__item"><a href="index.html">home</a></li>
+              <li class="hero-breadcrumb__item"><span aria-current="page">blog</span></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="page page--blog">
+          <div class="page__blog">
+            <section class="blogs">
+              <div class="blogs__item">
+                <div class="embed blogs__media">
+                  <picture>
+                    <source srcset="./assets/img/blog/blog-img-1.webp" type="image/webp"><img src="./assets/img/blog/blog-img-1.jpg" alt="Blog img" width="750" height="500" loading="lazy" decoding="async">
+                  </picture>
+                </div>
+                <div class="blogs__info">
+                  <time class="blog__date" datetime="2015-10-13">October 13, 2015</time>
+                  <p>
+                    <ion-icon class="blogs__info-icon" name="chatbox-ellipses" aria-label="comments"></ion-icon>8
+                  </p>
+                  <p>
+                    <ion-icon class="blogs__info-icon blogs__info-icon--red" name="heart" aria-label="likes"></ion-icon>15
+                  </p>
+                </div>
+                <h2 class="blogs__title">The big LEAGUES OUR TURN STRAIGHTNIN</h2>
+                <p class="blogs__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur.
+                </p><a class="blog__link" href="#">continue reading
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon></a>
+              </div>
+              <div class="blogs__item">
+                <div class="embed blogs__media">
+                  <picture>
+                    <source srcset="./assets/img/blog/blog-img-1.webp" type="image/webp"><img src="./assets/img/blog/blog-img-1.jpg" alt="Blog img" width="750" height="500" loading="lazy" decoding="async">
+                  </picture>
+                </div>
+                <div class="blogs__info">
+                  <time class="blog__date" datetime="2015-10-13">October 13, 2015</time>
+                  <p>
+                    <ion-icon class="blogs__info-icon" name="chatbox-ellipses" aria-label="comments"></ion-icon>8
+                  </p>
+                  <p>
+                    <ion-icon class="blogs__info-icon blogs__info-icon--red" name="heart" aria-label="likes"></ion-icon>15
+                  </p>
+                </div>
+                <h2 class="blogs__title">The big LEAGUES OUR TURN STRAIGHTNIN</h2>
+                <p class="blogs__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur.
+                </p><a class="blog__link" href="#">continue reading
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon></a>
+              </div>
+              <div class="blogs__item">
+                <div class="embed blogs__media">
+                  <picture>
+                    <source srcset="./assets/img/blog/blog-img-1.webp" type="image/webp"><img src="./assets/img/blog/blog-img-1.jpg" alt="Blog img" width="750" height="500" loading="lazy" decoding="async">
+                  </picture>
+                </div>
+                <div class="blogs__info">
+                  <time class="blog__date" datetime="2015-10-13">October 13, 2015</time>
+                  <p>
+                    <ion-icon class="blogs__info-icon" name="chatbox-ellipses" aria-label="comments"></ion-icon>8
+                  </p>
+                  <p>
+                    <ion-icon class="blogs__info-icon blogs__info-icon--red" name="heart" aria-label="likes"></ion-icon>15
+                  </p>
+                </div>
+                <h2 class="blogs__title">The big LEAGUES OUR TURN STRAIGHTNIN</h2>
+                <p class="blogs__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur.
+                </p><a class="blog__link" href="#">continue reading
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon></a>
+              </div>
+              <div class="blogs__pagination page-pagination"><a class="page-pagination__link" href="#">
+                  <ion-icon class="page-pagination__icon page-pagination__icon--prev" name="arrow-back-outline" aria-hidden="true"></ion-icon>Previous</a><span class="page-pagination__delimer" aria-hidden="true">/</span><a class="page-pagination__link" href="#">Next
+                  <ion-icon class="page-pagination__icon" name="arrow-forward-outline" aria-hidden="true"></ion-icon></a></div>
+            </section>
+            <aside class="blog-filter">
+              <form class="post-search" action="#" method="get" name="blog-search">
+                <p class="post-search__input-wrap">
+                  <input class="post-search__input" id="post-search" type="search" name="search-query" placeholder="Search..." required>
+                  <label class="visually-hidden" for="post-search">Search...</label>
+                  <button class="post-search__submit" type="submit">
+                    <ion-icon name="search" aria-label="submit"></ion-icon>
+                  </button>
+                </p>
+              </form>
+              <div class="post-filter">
+                <h3 class="blog-filter__title">posts</h3>
+                <ul class="post-filter__list" id="post-filter-ctrl-container">
+                  <li class="post-filter__list-item"><a class="post-filter__link js-post-filter-ctrl active" href="#" data-group="lastes">lastes</a></li>
+                  <li class="post-filter__list-item"><a class="post-filter__link js-post-filter-ctrl" href="#" data-group="popular">popular</a></li>
+                  <li class="post-filter__list-item"><a class="post-filter__link js-post-filter-ctrl" href="#" data-group="comments">comments</a></li>
+                </ul>
+                <ol class="post-filter__posts" id="post-filter">
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="lastes"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-1.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-1.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna mollis ultricies
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="lastes"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-2.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-2.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna mollis ultricies
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="lastes"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-3.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-3.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna mollis ultricies
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="popular"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-2.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-2.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna 1
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="popular"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-3.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-3.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna manga
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="comments"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-3.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-3.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Post 7
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="comments"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-1.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-1.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna 8
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="comments"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-1.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-1.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna 9
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                  <li class="post-filter__posts-item js-post-filter-item" data-groups="comments"><a class="post-filter__post" href="#">
+                      <div class="ibg post-filter__img">
+                        <picture>
+                          <source srcset="./assets/img/blog/posts/post-img-2.webp" type="image/webp"><img src="./assets/img/blog/posts/post-img-2.jpg" alt="Post image" width="80" height="80" loading="lazy" decoding="async">
+                        </picture>
+                      </div>
+                      <p class="post-filter__post-title">Magna 10
+                        <time class="post-filter__date" datetime="2012-10-03">3th oct 2012</time>
+                      </p></a></li>
+                </ol>
+              </div>
+              <div class="post-category">
+                <h3 class="blog-filter__title">categories</h3>
+                <ul class="post-category__list">
+                  <li><a class="post-category__link" href="#"><span>Business </span><i>15</i></a></li>
+                  <li><a class="post-category__link" href="#"><span>Photography </span><i>17</i></a></li>
+                  <li><a class="post-category__link" href="#"><span>Journal </span><i>22</i></a></li>
+                  <li><a class="post-category__link" href="#"><span>Web devlopment </span><i>30</i></a></li>
+                </ul>
+              </div>
+              <div class="post-tags">
+                <h3 class="blog-filter__title">tags</h3>
+                <ul class="post-tags__list">
+                  <li><a class="post-tags__link" href="#">css</a></li>
+                  <li><a class="post-tags__link" href="#">javascript</a></li>
+                  <li><a class="post-tags__link" href="#">jquery</a></li>
+                  <li><a class="post-tags__link" href="#">html5</a></li>
+                  <li><a class="post-tags__link" href="#">bootstrap</a></li>
+                  <li><a class="post-tags__link" href="#">css</a></li>
+                  <li><a class="post-tags__link" href="#">javascript</a></li>
+                  <li><a class="post-tags__link" href="#">jquery</a></li>
+                </ul>
+              </div>
+              <div class="post-category">
+                <h3 class="blog-filter__title">archives</h3>
+                <ul class="post-category__list">
+                  <li><a class="post-category__link" href="#"><span>Business </span><i>15</i></a></li>
+                  <li><a class="post-category__link" href="#"><span>Photography </span><i>17</i></a></li>
+                  <li><a class="post-category__link" href="#"><span>Journal </span><i>22</i></a></li>
+                  <li><a class="post-category__link" href="#"><span>Web devlopment </span><i>30</i></a></li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="contact-footer" data-aos="fade-up">
+        <div class="container">
+          <div class="contact-footer__grid">
+            <div class="contact-footer__cooperate cooperate-form">
+              <h2 class="cooperate-form__title">YOU THINK WE'RE COOL&nbsp;? LET'S WORK TOGETHER</h2><a class="button button--invert cooperate-form__link" href="#" target="_blank" rel="noopener noreferrer">get in touch</a>
+            </div>
+            <form class="contact-footer__subscribe subscribe-form" action="#" method="post" name="subscribe-form">
+              <h2 class="subscribe-form__title">STAY INFORMED WITH OUR <br>NEWSLETTER</h2>
+              <p class="subscribe-form__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p class="custom-input subscribe-form__row">
+                <input class="custom-input__input subscribe-form__input" type="email" name="subscribe-email" id="subscribe-email" placeholder="Your email" required>
+                <label class="custom-input__placeholder" for="subscribe-email">Your email</label>
+                <button class="button subscribe-form__submit" type="submit">send</button>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer__menu">
+          <ul class="footer-menu">
+            <li class="footer-menu__item"><a class="footer-menu__link" href="index.html" data-load-anim>Home</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="about.html" data-load-anim>About us</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="services.html" data-load-anim>Services</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="portfolio.html" data-load-anim>Portfolio</a></li>
+            <li class="footer-menu__item"><span class="footer-menu__link active">Blog</span></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="contact.html" data-load-anim>Contact us</a></li>
+          </ul>
+          <div class="footer__inner">
+            <p class="footer__copyright">Created by akhouad 2016. All Rights Reserved</p>
+            <ul class="social-menu">
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="youtube">
+                  <ion-icon name="logo-youtube"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+                  <ion-icon name="logo-linkedin"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="pinterest">
+                  <ion-icon name="logo-pinterest"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

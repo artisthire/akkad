@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>Contact us</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./assets/favicons/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="./assets/favicons/favicon-16x16.png" type="image/png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link type="font/woff2" href="./assets/fonts/montserrat-v18-latin-regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/montserrat-v18-latin-700.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/open-sans-v26-latin-regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/normalize.min.css">
+    <script src="./assets/js/checkSupport.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script defer src="./assets/js/app.min.js"></script><link href="./assets/css/style.min.css" rel="stylesheet"></head>
+  <body>
+    <picture style="display: none">
+      <source type="image/webp" srcset="data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA 1x"><img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQIAHAAcAAD/2wBDAAMDAwMDAwMDAwMEBAQEBAYFBQUFBgkGBwYHBgkOCAoICAoIDgwPDAsMDwwWEQ8PERYZFRQVGR4bGx4mJCYyMkP/wgALCAABAAEBAREA/8QAFAABAAAAAAAAAAAAAAAAAAAACf/aAAgBAQAAAABU/wD/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAE/AH//2Q==" decoding="sync" alt="" aria-hidden="true" onload="if(this.currentSrc.includes('webp')){document.documentElement.classList.add('webp');}else{document.documentElement.classList.add('no-webp');}">
+    </picture>
+    <header class="header header--inner">
+      <div class="header__menu-wrap" data-observer data-observer-target="header-menu">
+        <div class="header__menu header-menu" id="header-menu">
+          <div class="container">
+            <div class="header-menu__grid"><a class="header-menu__logo" href="index.html" data-load-anim>Akad.</a>
+              <button class="header-menu__burger menu-burger" type="button" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarSupportedContent" data-burger data-burger-target="navbarSupportedContent"><span></span></button>
+              <nav class="header-menu__menu main-menu" id="navbarSupportedContent" aria-label="Main menu">
+                <ul class="main-menu__list" role="menubar" aria-label="Main menu" data-burger-navmenu>
+                  <li role="none"><a href="index.html" role="menuitem" data-load-anim>Home</a></li>
+                  <li role="none"><a class="accordion__ctrl main-menu__sublist-ctrl" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="services-submenu" data-accordion-ctrl data-accordion-target="services-submenu">Services</a>
+                    <ul class="accordion__content main-menu__sublist" id="services-submenu" role="menu" aria-label="Services">
+                      <li role="none"><a href="services.html" role="menuitem" data-load-anim>Services-1</a></li>
+                      <li role="none"><a href="services.html" role="menuitem" data-load-anim>Services-2</a></li>
+                      <li role="none"><a href="services.html" role="menuitem" data-load-anim>Services-3</a></li>
+                    </ul>
+                  </li>
+                  <li role="none"><a href="about.html" role="menuitem" data-load-anim>About us</a></li>
+                  <li role="none"><span class="active" role="menuitem" aria-current="page">Contact us</span></li>
+                  <li role="none"><a class="accordion__ctrl main-menu__sublist-ctrl" href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="blog-submenu" data-accordion-ctrl data-accordion-target="blog-submenu">Blog</a>
+                    <ul class="accordion__content main-menu__sublist" id="blog-submenu" role="menu" aria-label="Blog">
+                      <li role="none"><a href="blog.html" role="menuitem" data-load-anim>Blog-1</a></li>
+                      <li role="none"><a href="blog.html" role="menuitem" data-load-anim>Blog-2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header__hero hero-breadcrumb">
+          <h1 class="hero-breadcrumb__title">Contact us</h1>
+          <nav class="hero-breadcrumb__breadcrumb" aria-label="Breadcrumb">
+            <ol class="hero-breadcrumb__list">
+              <li class="hero-breadcrumb__item"><a href="index.html">home</a></li>
+              <li class="hero-breadcrumb__item"><span aria-current="page">contact</span></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="page">
+          <section class="contact">
+            <div class="contact__row">
+              <div class="contact__column">
+                <form class="contact-form" action="#" method="post" name="contact-form">
+                  <div class="contact-form__row">
+                    <p class="custom-input contact-form__input-wrap">
+                      <input class="custom-input__input" id="user-name" type="text" name="user-name" placeholder="your name" required>
+                      <label class="custom-input__placeholder" for="user-name">your name</label>
+                    </p>
+                    <p class="custom-input contact-form__input-wrap">
+                      <input class="custom-input__input" id="user-email" type="email" name="user-email" placeholder="your email" required>
+                      <label class="custom-input__placeholder" for="user-email">your email</label>
+                    </p>
+                  </div>
+                  <p class="custom-input contact-form__input-wrap">
+                    <input class="custom-input__input" id="object" type="text" name="object" placeholder="object" required>
+                    <label class="custom-input__placeholder" for="object">object</label>
+                  </p>
+                  <p class="custom-input contact-form__input-wrap">
+                    <textarea class="custom-input__input" id="message" name="message" cols="30" rows="10" placeholder="message"></textarea>
+                    <label class="custom-input__placeholder" for="message">message</label>
+                  </p>
+                  <button class="contact-form__submit-btn button" type="submit">send</button>
+                </form>
+                <div class="contact-info">
+                  <h2 class="contact-info__title">CONTACT INFO</h2>
+                  <p>Lorem ipsum dolor sit amet, conse adipisicing elit. Libero incidunt quod ab mollitia quia dolorum conse.</p>
+                  <div class="contact-info__address">
+                    <p class="contact-info__post">13D, Functional apartment, Unique colony, Agadir 86360</p><a href="tel:+212124566780">+212 124-566-780</a><a href="tel:+212124566780">+212 124-566-780</a><a href="mailto:email@website.com">email@website.com</a>
+                  </div>
+                  <ul class="social-menu contact-info__social">
+                    <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="facebook">
+                        <ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="twitter">
+                        <ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="youtube">
+                        <ion-icon name="logo-youtube"></ion-icon></a></li>
+                    <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+                        <ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="pinterest">
+                        <ion-icon name="logo-pinterest"></ion-icon></a></li>
+                    <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="instagram">
+                        <ion-icon name="logo-instagram"></ion-icon></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="contact__column">
+                <h2 class="visually-hidden">Our geolocation</h2>
+                <div class="contact__map" id="contact-map"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="contact-footer" data-aos="fade-up">
+        <div class="container">
+          <div class="contact-footer__grid">
+            <div class="contact-footer__cooperate cooperate-form">
+              <h2 class="cooperate-form__title">YOU THINK WE'RE COOL&nbsp;? LET'S WORK TOGETHER</h2><a class="button button--invert cooperate-form__link" href="#" target="_blank" rel="noopener noreferrer">get in touch</a>
+            </div>
+            <form class="contact-footer__subscribe subscribe-form" action="#" method="post" name="subscribe-form">
+              <h2 class="subscribe-form__title">STAY INFORMED WITH OUR <br>NEWSLETTER</h2>
+              <p class="subscribe-form__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p class="custom-input subscribe-form__row">
+                <input class="custom-input__input subscribe-form__input" type="email" name="subscribe-email" id="subscribe-email" placeholder="Your email" required>
+                <label class="custom-input__placeholder" for="subscribe-email">Your email</label>
+                <button class="button subscribe-form__submit" type="submit">send</button>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer__menu">
+          <ul class="footer-menu">
+            <li class="footer-menu__item"><a class="footer-menu__link" href="index.html" data-load-anim>Home</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="about.html" data-load-anim>About us</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="services.html" data-load-anim>Services</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="portfolio.html" data-load-anim>Portfolio</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="blog.html" data-load-anim>Blog</a></li>
+            <li class="footer-menu__item"><span class="footer-menu__link active">Contact us</span></li>
+          </ul>
+          <div class="footer__inner">
+            <p class="footer__copyright">Created by akhouad 2016. All Rights Reserved</p>
+            <ul class="social-menu">
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="facebook">
+                  <ion-icon name="logo-facebook"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="twitter">
+                  <ion-icon name="logo-twitter"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="youtube">
+                  <ion-icon name="logo-youtube"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="linkedin">
+                  <ion-icon name="logo-linkedin"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="pinterest">
+                  <ion-icon name="logo-pinterest"></ion-icon></a></li>
+              <li class="social-menu__item"><a class="social-menu__link" href="#" target="_blank" rel="noopener noreferrer" aria-label="instagram">
+                  <ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
