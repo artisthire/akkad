@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Web site Akad Creative Agency",
   "main": "index.js",
+  "homepage": "https://artisthire.github.io/akkad/",
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "start": "webpack --config webpack.prod.js",
-    "server": "http-server ./dist -o --no-dotfiles "
+    "server": "http-server ./dist -o --no-dotfiles ",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm start"
   },
   "author": "Andrey",
   "license": "MIT",
@@ -24,6 +27,7 @@
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-babel": "^5.3.1",
     "fs": "0.0.1-security",
+    "gh-pages": "^4.0.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "http-server": "^13.0.2",
